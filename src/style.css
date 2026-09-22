@@ -1,0 +1,196 @@
+:root {
+  --encre-jaune: #ffd60a;
+  --encre-vertjus: #d7ff3e;
+  --encre-orange: #ff8a1e;
+  --encre-rose: #ff41b4;
+  --encre-cyan: #26e6e1;
+  --encre-violet: #9437ff;
+  --fond: #24262d;
+  --fond-carte: #363a44;
+  --fond-carte-claire: #40444f;
+  --fond-noir: #101116;
+  --fond-puce: #1a1b20;
+  --texte-clair: #fdfdfd;
+  --texte-muet: #9aa0ac;
+  --danger: #ff3d5a;
+  --succes: #35e07a;
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--fond);
+  color: var(--texte-clair);
+  font-family: 'Fredoka', 'Nunito', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, .titre-jeu {
+  font-family: 'Baloo 2', 'Fredoka', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.titre-choc {
+  font-family: 'Titan One', 'Baloo 2', sans-serif;
+  color: var(--encre-vertjus);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.45);
+  letter-spacing: 0.5px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.conteneur {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+/* -- Boutons -- */
+.btn {
+  font-family: 'Baloo 2', sans-serif;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn-primaire {
+  background: linear-gradient(120deg, var(--encre-orange), var(--encre-rose));
+  color: white;
+  box-shadow: 0 6px 18px rgba(255, 138, 30, 0.35);
+}
+.btn-secondaire {
+  background: var(--fond-carte-claire);
+  color: var(--texte-clair);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
+.btn-danger:hover {
+  box-shadow: 0 6px 16px rgba(255, 61, 90, 0.4);
+}
+.btn-cyan {
+  background: linear-gradient(120deg, var(--encre-cyan), var(--encre-violet));
+  color: #101116;
+  box-shadow: 0 6px 18px rgba(38, 230, 225, 0.3);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+.btn-petit {
+  padding: 6px 14px;
+  font-size: 0.8rem;
+}
+
+/* -- Cartes -- */
+.carte {
+  background: var(--fond-carte);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 20px;
+}
+
+/* -- Champs de formulaire -- */
+input, select, textarea {
+  font-family: 'Fredoka', sans-serif;
+  background: var(--fond-puce);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  color: var(--texte-clair);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  width: 100%;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--encre-vertjus);
+}
+label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--texte-muet);
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* -- Monnaie (pièces Splatoon) -- */
+.piece {
+  height: 1em;
+  width: 1em;
+  vertical-align: -0.15em;
+  margin-right: 4px;
+}
+.prix {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  color: var(--encre-jaune);
+}
+
+.badge {
+  display: inline-block;
+  background: var(--fond-puce);
+  border-radius: 999px;
+  padding: 3px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--texte-muet);
+}
+
+.grille-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.vide {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--texte-muet);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+.pagination span {
+  font-weight: 700;
+  color: var(--texte-muet);
+}
